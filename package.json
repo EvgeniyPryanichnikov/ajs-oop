@@ -16,17 +16,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marinaustinovich/ajs-homeworks-oop.git"
+    "url": "git+https://github.com/EvgeniyPryanichnikov/ajs-oop.git"
   },
   "keywords": [
     "classes"
   ],
-  "author": "Marina",
+  "author": "Evgeniy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/marinaustinovich/ajs-homeworks-oop/issues"
+    "url": "https://github.com/EvgeniyPryanichnikov/ajs-oop/issues"
   },
-  "homepage": "https://github.com/marinaustinovich/ajs-homeworks-oop#readme",
+  "homepage": "https://github.com/EvgeniyPryanichnikov/ajs-oop#readme",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
