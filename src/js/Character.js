@@ -1,44 +1,39 @@
-/* eslint-disable no-unused-vars */
 export default class Character {
   constructor(name, type) {
     const types = ['Bowerman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
 
-    if (name !== 'string' || name.length < 2 || name.length > 10) {
-      throw new Error('не корректное имя');
+    if (typeof name !== 'string' || name.length < 2 || name.length > 10) {
+      throw new Error('Передано некорректное значение имени персонажа');
     }
-
     if (!types.includes(type)) {
-      throw new Error('не корректный тип');
+      throw new Error('Передано некорректное значение типа персонажа');
     }
 
     this.name = name;
     this.type = type;
     this.health = 100;
     this.level = 1;
-    this.attack = null;
-    this.defence = null;
+    this.attack = undefined;
+    this.defence = undefined;
+  }
 
-    function levelUp() {
-      if (this.health <= 0) {
-        throw new Error('нельзя повысить левел умершего');
-      }
-
-      this.level += 1;
-      this.attack *= 1.2;
-      this.defence *= 1.2;
-      this.health = 100;
+  levelUp() {
+    if (this.health <= 0) {
+      throw new Error('Нельзя повысить уровень умершего');
     }
+    this.level += 1;
+    this.attack *= 1.2;
+    this.defence *= 1.2;
+    this.health = 100;
+  }
 
-    function damage(points) {
-      if (this.health <= 0) {
-        return;
-      }
-
-      this.health -= points * (1 - this.defence / 100);
-
-      if (this.health < 0) {
-        this.health = 0;
-      }
+  damage(points) {
+    if (this.health <= 0) {
+      return;
+    }
+    this.health -= points * (1 - this.defence / 100);
+    if (this.health < 0) {
+      this.health = 0;
     }
   }
 }
